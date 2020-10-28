@@ -11,7 +11,7 @@ public class Application {
     public static void main(String[] args) throws Throwable {
         //Create feature file
         createFeatureFile();
-        //Execute cucumber process
+        //Execute test process
         executeProcess();
     }
 
@@ -24,7 +24,7 @@ public class Application {
                     "--strict",
                     "--glue",
                     "digi.automation.client.steps",
-                    DriverInitializer.getProperty("filePath") + "/login1.feature"});
+                    DriverInitializer.getProperty("filePath") + "/login.feature"});
         } catch (Throwable throwable) {
             throwable.printStackTrace();
         }
@@ -37,7 +37,7 @@ public class Application {
     private static void createFeatureFile() {
 
         try {
-            File file = new File(DriverInitializer.getProperty("filePath") + "/login1.feature");
+            File file = new File(DriverInitializer.getProperty("filePath") + "/login.feature");
             if (file.createNewFile()) {
                 writeTestScenarioInTheFile();
             } else {
@@ -54,7 +54,7 @@ public class Application {
      */
     private static void writeTestScenarioInTheFile() {
         try {
-            FileWriter fw = new FileWriter(DriverInitializer.getProperty("filePath") + "/login1.feature");
+            FileWriter fw = new FileWriter(DriverInitializer.getProperty("filePath") + "/login.feature");
             fw.write("");
             fw.flush();
             fw.write(createGherkinScript());
