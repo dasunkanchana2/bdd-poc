@@ -1,11 +1,8 @@
 package digi.automation.client.steps;
 
-import digi.automation.client.DriverInitializer;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import digi.automation.client.driver.DriverInitializer;
+import cucumber.api.java.en.*;
+import org.openqa.selenium.*;
 
 public class LoginSteps {
 
